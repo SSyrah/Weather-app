@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link href="nakyma2.css" rel="stylesheet" />
+    <title>Final practice</title>
+  </head>
+
+  <body id="main">
+    <nav class="navbar navbar-dark navbar-expand-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Tervetuloa</a>
+        <ul class="navbar-nav me-auto my-2">
+          <li class="nav-item">
+            <a class="nav-link" href="/nakyma1.html">Näkymä 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand" href="/nakyma2.html">Näkymä 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/nakyma3.html">Näkymä 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="CurrentDate"></div>
+    <br/>
+    <br/>
+
+    <h1 style="text-align: center">Tuulen nopeus</h1>
+    <br />
+    <div style="text-align: center; color: white; font-size: large">
+      Oheiseen taulukkoon saat alasvetovalikosta valitsemalla kyseisen määrän
+      viimeksi mittattuja tuulen nopeuden mittausarvoja. Arvot tulevat oman
+      API:n kautta.
+    </div>
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8"></div>
+        <div>
+          <br />
+          <button id="valuebutton" class="btn btn-primary" type="button">
+            Hae tiedot
+          </button>
+          <br />
+          <br />
+          <div
+            id="spinner-border"
+            class="spinner-border text-primary d-none"
+          ></div>
+          <form id="form" style="color: white">
+            <select name="time" id="time">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="50">50</option>
+              <option value="60">60</option>
+              <option value="70">70</option>
+              <option value="80">80</option>
+              <option value="90">90</option>
+              <option value="100">100</option>
+              <option value="150">150</option>
+
+            </select>
+          </form>
+        </div>
+        <div class="row justify-content-sm-center">
+          <div class="col-sm-8">
+            <table
+              class="table table-light table-bordered table-hover"
+              style="text-align: center">
+              <thead>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Value</th>
+              </thead>
+              <tbody id="tablebody"></tbody>
+            </table>
+          </div>
+          <div class="col">
+            <canvas id="myChart" class="d-none"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="nakyma2.js"></script>
+  </body>
+</html>

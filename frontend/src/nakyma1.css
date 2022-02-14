@@ -1,0 +1,17 @@
+table,
+tr,
+th,
+td {
+  text-align: center;
+  background-color: rgba(182, 189, 194, 0.551);
+}
+
+.general {
+  color: white;
+  text-align: center;
+}
+
+canvas {
+  background-color: white;
+  opacity: 0.92;
+}

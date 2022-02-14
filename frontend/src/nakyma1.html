@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="nakyma1.css" />
+    <title>Final practice</title>
+  </head>
+
+  <body id="main">
+    <nav class="navbar navbar-dark navbar-expand-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Tervetuloa</a>
+        <ul class="navbar-nav me-auto my-2">
+          <li class="nav-item">
+            <a class="navbar-brand" href="/nakyma1.html">Näkymä 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/nakyma2.html">Näkymä 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/nakyma3.html">Näkymä 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="CurrentDate"></div>
+    <br/>
+    <br/>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <br />
+          <h2 class="general">Tähän tulee säädataa taulukkoon</h2>
+          <br />
+          <form id="mainform" style="text-align: center; color: white">
+            <select name="values" id="values">
+              <option value="limit/50">Kaikki sensorit</option>
+              <option value="wind_direction">Tuulen suunta</option>
+              <option value="wind_speed">Tuulen nopeus</option>
+              <option value="temperature">Lämpötila</option>
+              <option value="humidity_out">Ilmankosteus ulkona</option>
+              <option value="humidity_in">Ilman kosteus sisällä</option>
+              <option value="light">Valoisuus</option>
+              <option value="rain">Sademäärä</option>
+              <option value="Air_pres_1">Ilmanpaine</option>
+              <option value="Wind_dir_MIRC">Tuulen suunta ryhmä 27</option>
+            </select>
+
+            <button id="valuedata" class="btn btn-primary" type="button">
+              Hae tiedot
+            </button>
+            <div
+              id="spinner-border"
+              class="spinner-border text-primary d-none"
+            ></div>
+            <br />
+            <br />
+            <div>
+              Tilastot näyttavät viimeiset
+              <span id="measure">---</span> mittausarvoa
+            </div>
+            <br />
+            <div>
+              Nykyinen käytetty data: <b><span id="location">---</span></b>
+            </div>
+
+            <div id="print">Mittaustulosten keskiarvo: --</div>
+            _______________________________________________________
+          </form>
+          <br />
+          <br />
+          <div>
+            <canvas id="myChart" class="d-none"></canvas>
+          </div>
+        </div>
+
+        <br />
+        <!-- <div class="row"> -->
+        <div class="col">
+          <br />
+          <br />
+          <table
+            class="table table-striped table-hover"
+            style="text-align: center"
+          >
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Device ID:</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Sensor</th>
+                <th>Value</th>
+                <!-- <th>---</th> -->
+              </tr>
+            </thead>
+            <tbody id="tablebody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="nakyma1.js"></script>
+  </body>
+</html>

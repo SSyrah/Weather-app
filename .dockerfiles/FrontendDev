@@ -1,0 +1,6 @@
+FROM node:10-slim
+RUN mkdir -p /app
+WORKDIR /app
+COPY ./frontend/src/ /app
+FROM nginx
+COPY --from=0 /app /usr/share/nginx/html

@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js -w src --exec babel-node",
+    "lint:prettier": " npx prettier --check 'src/**/*.js'",
+    "test": "npm run lint:prettier",
+    "test:watch": "nodemon -w src --exec 'npm test'",
+    "start": "node build/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "babel-polyfill": "^6.26.0",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^2.0.7"
+  }
+}

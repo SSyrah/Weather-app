@@ -1,0 +1,35 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./
+      dockerfile: .dockerfiles/BackendDev
+    environment:
+      BABEL_DISABLE_CACHE: 1
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./backend:/opt/app
+    restart: always
+  frontend:
+    build:
+      context: ./
+      dockerfile: .dockerfiles/FrontendDev
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/opt/app
+    restart: always
+  db:
+    image: mysql:8.0.3
+    volumes:
+      - /var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: db_rootpass
+      MYSQL_DATABASE: db_1
+    restart: always
+  mywebsql:
+    image: quantumobject/docker-mywebsql
+    ports:
+      - "9001:80"
+    restart: always

@@ -1,0 +1,29 @@
+body {
+  background-image: url("https://wallpaperaccess.com/full/1141452.jpg");
+  /* background-image: url("https://wallpapercave.com/wp/wp4469846.jpg");
+  background-image: url("https://wallpapercave.com/wp/wp3193328.jpg"); */
+  background-size: cover;
+}
+
+.general {
+  color: white;
+}
+
+nav {
+  border: solid 3px rgba(255, 255, 255, 0.4);
+  background-image: url("https://wallpapercave.com/wp/wp4221860.jpg");
+}
+
+.font {
+  font-size: large;
+  color: white;
+}
+
+#logo {
+  max-width: 100%;
+  height: 300px;
+}
+
+#CurrentDate{
+  color: white;
+}
